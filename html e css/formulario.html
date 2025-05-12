@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Contato</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4 text-primary">Formulário de Contato</h1>
+    <form class="needs-validation" novalidate>
+
+      <fieldset class="border p-4 rounded">
+        <legend class="float-none w-auto px-3">Informações Pessoais</legend>
+
+        <!-- Nome -->
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome:</label>
+          <input type="text" class="form-control" id="nome" required>
+          <div class="invalid-feedback">Por favor, insira seu nome.</div>
+        </div>
+
+        <!-- Sobrenome -->
+        <div class="mb-3">
+          <label for="sobrenome" class="form-label">Sobrenome:</label>
+          <input type="text" class="form-control" id="sobrenome" required>
+          <div class="invalid-feedback">Por favor, insira seu sobrenome.</div>
+        </div>
+
+        <!-- Telefone -->
+        <div class="mb-3">
+          <label for="telefone" class="form-label">Telefone:</label>
+          <input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" pattern="\(\d{2}\)\s\d{5}-\d{4}" required>
+          <div class="invalid-feedback">Formato esperado: (99) 99999-9999</div>
+        </div>
+
+        <!-- E-mail -->
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail:</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="invalid-feedback">Insira um e-mail válido.</div>
+        </div>
+
+        <!-- Mensagem -->
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem:</label>
+          <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+          <div class="invalid-feedback">Digite uma mensagem.</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="border p-4 rounded mt-4">
+        <legend class="float-none w-auto px-3">Preferências</legend>
+
+        <!-- Língua aplicada -->
+        <div class="mb-3">
+          <label for="lingua" class="form-label">Língua aplicada:</label>
+          <select class="form-select" id="lingua" required>
+            <option value="">Selecione uma opção</option>
+            <option>Inglês</option>
+            <option>Espanhol</option>
+            <option>Francês</option>
+            <option>Português (pt-br)</option>
+          </select>
+          <div class="invalid-feedback">Selecione uma língua.</div>
+        </div>
+
+        <!-- Upload -->
+        <div class="mb-3">
+          <label for="arquivo" class="form-label">Enviar protótipo (PDF, DOC, DOCX, JPEG, PNG):</label>
+          <input class="form-control" type="file" id="arquivo" accept=".pdf,.doc,.docx,.jpeg,.jpg,.png" required>
+          <div class="invalid-feedback">Envie um arquivo válido.</div>
+        </div>
+
+        <!-- Linguagens preferidas (checkbox) -->
+        <div class="mb-3">
+          <label class="form-label">Linguagens preferidas:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lang1" value="HTML">
+            <label class="form-check-label" for="lang1">HTML</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lang2" value="CSS">
+            <label class="form-check-label" for="lang2">CSS</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lang3" value="JavaScript">
+            <label class="form-check-label" for="lang3">JavaScript</label>
+          </div>
+        </div>
+
+        <!-- Banco de dados (radio) -->
+        <div class="mb-3">
+          <label class="form-label">Tipo de banco de dados recomendado:</label><br>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="banco" id="mysql" required>
+            <label class="form-check-label" for="mysql">MySQL</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="banco" id="postgres">
+            <label class="form-check-label" for="postgres">PostgreSQL</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="banco" id="mongodb">
+            <label class="form-check-label" for="mongodb">MongoDB</label>
+          </div>
+          <div class="invalid-feedback d-block">Escolha uma opção.</div>
+        </div>
+
+        <!-- Turno preferido -->
+        <div class="mb-3">
+          <label for="turno" class="form-label">Turno de preferência para reuniões:</label>
+          <select class="form-select" id="turno" required>
+            <option value="">Selecione um turno</option>
+            <option>Manhã</option>
+            <option>Tarde</option>
+            <option>Noite</option>
+          </select>
+          <div class="invalid-feedback">Escolha um turno.</div>
+        </div>
+
+        <!-- Horário sugerido -->
+        <div class="mb-3">
+          <label for="hora" class="form-label">Melhor horário sugerido para reuniões:</label>
+          <input type="time" class="form-control" id="hora" required>
+          <div class="invalid-feedback">Escolha um horário.</div>
+        </div>
+
+        <!-- Data de entrega -->
+        <div class="mb-3">
+          <label for="data" class="form-label">Previsão de entrega desejada:</label>
+          <input type="date" class="form-control" id="data" required>
+          <div class="invalid-feedback">Informe uma data.</div>
+        </div>
+      </fieldset>
+
+      <!-- Botões -->
+      <div class="mt-4">
+        <button type="reset" class="btn btn-secondary me-2">Limpar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    // Bootstrap validation
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+</html>
